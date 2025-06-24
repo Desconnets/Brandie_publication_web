@@ -66,7 +66,7 @@
 
         .sequence-item {
             display: grid;
-            grid-template-columns: 80px 60px 120px 150px 200px 1fr 200px;
+            grid-template-columns: 80px 60px 120px 150px 200px 1fr 250px;
             gap: 15px;
             padding: 15px 20px;
             margin-bottom: 2px;
@@ -75,7 +75,7 @@
             border-radius: 0 8px 8px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
-            align-items: center;
+            align-items: start;
         }
 
         .sequence-item:hover {
@@ -264,12 +264,42 @@
         </div>
 
         <div class="legend">
-            <h3>🎭 Légende des intervenants</h3>
-            <span class="legend-item speaker jonathan">Jonathan</span>
-            <span class="legend-item speaker cedric">Cédric</span>
-            <span class="legend-item speaker duo">Duo</span>
-            <span class="legend-item speaker emma">Emma</span>
-            <span class="legend-item speaker marc">Marc</span>
+            <h3>👥 Qui sont les intervenants ?</h3>
+            <div style="margin-bottom: 20px; background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                <p><strong>🎯 Objectif :</strong> Émission de 10 minutes pour présenter le Brand Seduction Index et générer des leads qualifiés</p>
+                <p><strong>📍 Format :</strong> Interview fluide + témoignages + décryptage expert</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #3498db;">
+                    <span class="legend-item speaker jonathan">Jonathan</span>
+                    <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Co-fondateur Brandie<br>Expert stratégie digitale</p>
+                </div>
+                <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <span class="legend-item speaker cedric">Cédric</span>
+                    <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Co-fondateur Brandie<br>Expert marque employeur</p>
+                </div>
+                <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #27ae60;">
+                    <span class="legend-item speaker emma">Emma</span>
+                    <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Candidate junior<br>Profil digital natif</p>
+                </div>
+                <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #f39c12;">
+                    <span class="legend-item speaker marc">Marc</span>
+                    <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Candidat senior<br>Profil expérimenté</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 20px 30px; padding: 20px; background: #2c3e50; color: white; border-radius: 10px;">
+            <h3 style="margin-bottom: 15px; color: #3498db;">📋 Structure du conducteur</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; font-size: 0.9rem;">
+                <div><strong>⏰ Timecode :</strong> Timing précis</div>
+                <div><strong>⏱️ Durée :</strong> Temps de parole</div>
+                <div><strong>🎤 Intervenant :</strong> Qui parle</div>
+                <div><strong>📺 Action :</strong> Type d'intervention</div>
+                <div><strong>💬 Contenu :</strong> Script/Message</div>
+                <div><strong>🧠 Aide-mémoire :</strong> Arguments & conseils</div>
+            </div>
         </div>
 
         <div class="timeline">
@@ -282,7 +312,7 @@
                 <div class="speaker jonathan">Jonathan</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"73% des candidats abandonnent après avoir cherché des infos sur l'entreprise"</div>
-                <div class="aide-memoire">Chiffre marquant - Parler du <strong>"parcours de séduction candidat"</strong> = concept clé</div>
+                <div class="aide-memoire"><strong>CONCEPT CLÉ :</strong> Introduire le 'parcours de séduction candidat' - démarche proactive que 90% des candidats entreprennent immédiatement après exposition à une offre. Insister : ce n'est plus du recrutement classique, c'est de la séduction pre-candidature.</div>
             </div>
 
             <div class="sequence-item accroche">
@@ -291,7 +321,7 @@
                 <div class="speaker cedric">Cédric</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"Le problème ? Vous ne savez pas ce qu'ils trouvent sur vous"</div>
-                <div class="aide-memoire">Mettre l'accent sur le <strong>paradoxe</strong> : investissement interne vs communication externe incohérente</div>
+                <div class="aide-memoire"><strong>PARADOXE MAJEUR :</strong> 'Vous investissez massivement dans l'expérience employé interne (Workday, Peakon...) mais votre communication externe manque de cohérence, diluant l'impact de votre marque employeur'. Mentionner que ça freine directement la croissance.</div>
             </div>
 
             <div class="sequence-item accroche">
@@ -300,7 +330,7 @@
                 <div class="speaker jonathan">Jonathan</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"On a enquêté. Et c'est pire que ce qu'on pensait"</div>
-                <div class="aide-memoire">Teaser notre expertise : <strong>14 ans d'accompagnement boîtes de conseil</strong> - on connaît le terrain</div>
+                <div class="aide-memoire"><strong>CRÉDIBILITÉ :</strong> '14 ans d'accompagnement spécialisé des boîtes de conseil et cabinets en croissance rapide. Nos deux agences maîtrisent parfaitement ce terrain.' Teaser : on a des données exclusives sur les comportements candidats.</div>
             </div>
 
             <div class="sequence-item accroche">
@@ -309,7 +339,7 @@
                 <div class="speaker duo">Duo</div>
                 <div class="action">Dialogue naturel</div>
                 <div class="contenu">Discussion sur l'impact du problème</div>
-                <div class="aide-memoire">Insister sur l'enjeu business : <strong>guerre des talents commence AVANT le recrutement</strong></div>
+                <div class="aide-memoire"><strong>ENJEU BUSINESS :</strong> 'La guerre des talents ne se gagne pas sur les process RH mais bien AVANT, dès l'exposition à l'offre. Chaque recrutement raté coûte 6 mois de salaire.' Transition vers : on va vous montrer ce parcours invisible.</div>
             </div>
 
             <!-- RÉVÉLATION -->
@@ -321,7 +351,7 @@
                 <div class="speaker cedric">Cédric</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"Voici le parcours classique : un candidat voit votre offre LinkedIn"</div>
-                <div class="aide-memoire">Décrire la <strong>démarche proactive du candidat</strong> - recherche d'infos déterminante</div>
+                <div class="aide-memoire"><strong>COMPORTEMENT CANDIDAT :</strong> 'Démarche proactive de recherche d'informations qui détermine si le talent postule chez vous, préfère la concurrence, ou reste dans son organisation actuelle.' Insister : c'est immédiat, systématique, et déterminant.</div>
             </div>
 
             <div class="sequence-item revelation">
@@ -330,7 +360,7 @@
                 <div class="speaker cedric">Cédric</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"Premier réflexe : Google. Il tape votre nom d'entreprise"</div>
-                <div class="aide-memoire">Évolution comportementale : <strong>candidats de plus en plus regardants</strong></div>
+                <div class="aide-memoire"><strong>ÉVOLUTION MARCHÉ :</strong> 'Dans un marché du travail de plus en plus concurrentiel, les candidats sont de plus en plus regardants et exigeants.' Mentionner que ce comportement s'intensifie avec les nouvelles générations et l'accès à l'information.</div>
             </div>
 
             <div class="sequence-item revelation">
@@ -339,7 +369,7 @@
                 <div class="speaker cedric">Cédric</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"Il va chercher 3 types d'infos qui déterminent s'il postule..."</div>
-                <div class="aide-memoire">Teaser les <strong>3 phases sans révéler notre grille d'analyse</strong></div>
+                <div class="aide-memoire"><strong>NOTRE INNOVATION :</strong> 'C'est pourquoi nous avons développé le Brand Seduction Index, une méthodologie qui analyse et optimise l'ensemble du parcours pré-candidature.' ATTENTION : ne pas révéler notre grille d'analyse détaillée.</div>
             </div>
 
             <div class="sequence-item revelation">
@@ -348,7 +378,7 @@
                 <div class="speaker jonathan">Jonathan</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"Les 3 moments de vérité :"</div>
-                <div class="aide-memoire">Introduire nos <strong>3 phases clés</strong> mais rester mystérieux sur la méthodo</div>
+                <div class="aide-memoire"><strong>TEASING MÉTHODOLOGIE :</strong> 'Ce parcours se décompose en 3 phases critiques que nous mesurons précisément.' Rester mystérieux sur le COMMENT mais expliquer l'importance de chaque phase pour l'attractivité employeur.</div>
             </div>
 
             <div class="sequence-item revelation">
@@ -357,7 +387,7 @@
                 <div class="speaker jonathan">Jonathan</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"- Votre site : il se fait une idée en 30 secondes"</div>
-                <div class="aide-memoire"><strong>Phase 1 : Attractivité</strong> - premier contact crucial</div>
+                <div class="aide-memoire"><strong>PHASE 1 - ATTRACTIVITÉ :</strong> 'Via votre site internet et contenus institutionnels sur les réseaux : premier contact crucial qui positionne votre expertise.' Mentionner que nos experts analysent via une grille sur mesure les critères objectifs et subjectifs.</div>
             </div>
 
             <div class="sequence-item revelation">
@@ -366,7 +396,7 @@
                 <div class="speaker jonathan">Jonathan</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"- Vos réseaux sociaux : il teste l'authenticité"</div>
-                <div class="aide-memoire"><strong>Phase 2 : Désirabilité</strong> - engagement émotionnel</div>
+                <div class="aide-memoire"><strong>PHASE 2 - DÉSIRABILITÉ :</strong> 'Essentiellement via vos réseaux sociaux : où se joue l'authenticité et l'engagement émotionnel.' Expliquer que c'est là que le candidat teste votre cohérence entre discours et réalité.</div>
             </div>
 
             <div class="sequence-item revelation">
@@ -375,7 +405,7 @@
                 <div class="speaker jonathan">Jonathan</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"- Les avis en ligne : il cherche la validation finale"</div>
-                <div class="aide-memoire"><strong>Phase 3 : Réassurance</strong> - validation du choix (+ mentionner IA émergent)</div>
+                <div class="aide-memoire"><strong>PHASE 3 - RÉASSURANCE :</strong> 'Via les plateformes d'avis et l'intelligence artificielle : désormais incontournables pour se rassurer et valider le choix.' INNOVATION : mentionner la pratique émergente de demander conseil directement aux IA.</div>
             </div>
 
             <!-- CAS PRATIQUE -->
@@ -387,7 +417,7 @@
                 <div class="speaker cedric">Cédric</div>
                 <div class="action">Présentation</div>
                 <div class="contenu">"On a demandé à Emma et Marc d'analyser la même entreprise : TechConseil"</div>
-                <div class="aide-memoire">Exemple concret d'audit <strong>Brand Seduction Index</strong> - sans révéler la grille</div>
+                <div class="aide-memoire"><strong>EXEMPLE CONCRET :</strong> 'Nous avons audité leur écosystème digital pour établir leur Brand Seduction Index actuel.' Expliquer qu'on analyse via nos experts métiers (stratégie, création, digital, social media) SANS révéler la grille détaillée.</div>
             </div>
 
             <div class="sequence-item cas-pratique">
@@ -396,7 +426,7 @@
                 <div class="speaker cedric">Cédric</div>
                 <div class="action">Présentation</div>
                 <div class="contenu">"Site corporate correct mais froid, très bonne présence LinkedIn, mais avis Glassdoor catastrophiques"</div>
-                <div class="aide-memoire">Illustrer <strong>l'incohérence = problème majeur</strong> qu'on sait diagnostiquer</div>
+                <div class="aide-memoire"><strong>DIAGNOSTIC D'INCOHÉRENCE :</strong> 'L'objectif n'est pas de révolutionner leur communication externe, mais d'impulser une cohérence stratégique qui amplifie l'attractivité employeur.' Montrer qu'on sait identifier les problèmes que les entreprises ne voient pas.</div>
             </div>
 
             <div class="sequence-item cas-pratique">
@@ -405,7 +435,7 @@
                 <div class="speaker emma">Emma</div>
                 <div class="action">Témoignage</div>
                 <div class="contenu">"TechConseil ? J'ai vu l'offre... [Témoignage complet]"</div>
-                <div class="aide-memoire"><strong>Profil junior</strong> = vision fraîche du marché actuel</div>
+                <div class="aide-memoire"><strong>PROFIL JUNIOR-DIGITAL :</strong> Représente la nouvelle génération de candidats, ultra-connectée, qui fait ses recherches de manière instinctive et rapide. Son témoignage illustre l'évolution comportementale des talents.</div>
             </div>
 
             <div class="sequence-item cas-pratique">
@@ -414,7 +444,7 @@
                 <div class="speaker marc">Marc</div>
                 <div class="action">Témoignage</div>
                 <div class="contenu">"Même recherche, même conclusion... [Témoignage complet]"</div>
-                <div class="aide-memoire"><strong>Profil senior</strong> = expérience et pragmatisme</div>
+                <div class="aide-memoire"><strong>PROFIL SENIOR-EXPÉRIMENTÉ :</strong> Représente l'approche plus méthodique et pragmatique. Montre que le problème d'incohérence touche TOUS les profils, pas seulement les jeunes. Universalité du problème.</div>
             </div>
 
             <div class="sequence-item cas-pratique">
@@ -423,7 +453,7 @@
                 <div class="speaker jonathan">Jonathan</div>
                 <div class="action">Décryptage</div>
                 <div class="contenu">"Deux générations, même élimination. L'incohérence tue."</div>
-                <div class="aide-memoire">Analyse experte : <strong>nos 2 agences maîtrisent tous les profils candidats</strong></div>
+                <div class="aide-memoire"><strong>EXPERTISE TRANSVERSALE :</strong> 'Nos experts métiers analysent via une grille conçue sur mesure les critères objectifs et subjectifs du potentiel de séduction.' Insister : nos 2 agences maîtrisent tous les profils candidats grâce à 14 ans d'expérience.</div>
             </div>
 
             <div class="sequence-item cas-pratique">
@@ -432,7 +462,7 @@
                 <div class="speaker cedric">Cédric</div>
                 <div class="action">Décryptage</div>
                 <div class="contenu">"TechConseil perd 90% de ses candidats potentiels. Ils ne le savent même pas."</div>
-                <div class="aide-memoire">Impact business : <strong>coût d'un recrutement raté = 6 mois de salaire</strong></div>
+                <div class="aide-memoire"><strong>ROI BUSINESS :</strong> 'Cette démarche permet de passer d'une attraction de talents subie à une stratégie proactive et mesurée. Chaque recrutement raté coûte 6 mois de salaire, optimiser le parcours de séduction devient un investissement rentable.'</div>
             </div>
 
             <!-- SOLUTION -->
@@ -444,7 +474,7 @@
                 <div class="speaker cedric">Cédric</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"3 actions immédiates : auditez votre première impression digitale"</div>
-                <div class="aide-memoire">Conseil actionnable mais générique - <strong>garder le secret de notre méthodo détaillée</strong></div>
+                <div class="aide-memoire"><strong>CONSEIL GÉNÉRIQUE :</strong> Donner des actions basiques pour montrer notre expertise SANS révéler notre méthodologie propriétaire détaillée. Rester dans les conseils que tout le monde peut donner.</div>
             </div>
 
             <div class="sequence-item solution">
@@ -453,7 +483,7 @@
                 <div class="speaker jonathan">Jonathan</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"Soyez authentiques sur les réseaux, répondez aux avis"</div>
-                <div class="aide-memoire">Éviter de donner tous nos leviers - <strong>rester dans le conseil de base</strong></div>
+                <div class="aide-memoire"><strong>CONSEIL ÉVIDENT :</strong> Volontairement rester dans le basique pour créer la frustration et l'envie d'en savoir plus sur notre méthode complète. Ne pas donner nos vrais leviers différenciants.</div>
             </div>
 
             <div class="sequence-item solution">
@@ -462,7 +492,7 @@
                 <div class="speaker duo">Duo</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"Vous voulez savoir ce que trouvent vos candidats ? On propose un diagnostic gratuit"</div>
-                <div class="aide-memoire">CTA fort : teaser notre <strong>Brand Seduction Index + mentions grosse références</strong> (croissance rapide + 14 ans conseil)</div>
+                <div class="aide-memoire"><strong>CTA PUISSANT :</strong> 'Diagnostic gratuit de votre Brand Seduction Index.' MENTIONS CRÉDIBILITÉ : '14 ans d'accompagnement de grandes entreprises en croissance rapide, nos références parlent pour nous.' Créer l'urgence et l'exclusivité.</div>
             </div>
 
             <div class="sequence-item solution">

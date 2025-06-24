@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conducteur Émission - Brand Seduction Index</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .timeline {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            background: #34495e;
+            color: white;
+            padding: 15px 20px;
+            margin: 20px 0 10px 0;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sequence-item {
+            display: grid;
+            grid-template-columns: 80px 60px 120px 150px 200px 1fr 200px;
+            gap: 15px;
+            padding: 15px 20px;
+            margin-bottom: 2px;
+            border-left: 4px solid #3498db;
+            background: white;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            align-items: center;
+        }
+
+        .sequence-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .sequence-item.accroche {
+            border-left-color: #e74c3c;
+        }
+
+        .sequence-item.revelation {
+            border-left-color: #f39c12;
+        }
+
+        .sequence-item.cas-pratique {
+            border-left-color: #27ae60;
+        }
+
+        .sequence-item.solution {
+            border-left-color: #9b59b6;
+        }
+
+        .timecode {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 0.9rem;
+            background: #ecf0f1;
+            padding: 5px 8px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .duree {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            text-align: center;
+        }
+
+        .speaker {
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .speaker.jonathan {
+            background: #3498db;
+            color: white;
+        }
+
+        .speaker.cedric {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .speaker.duo {
+            background: #9b59b6;
+            color: white;
+        }
+
+        .speaker.emma {
+            background: #27ae60;
+            color: white;
+        }
+
+        .speaker.marc {
+            background: #f39c12;
+            color: white;
+        }
+
+        .action {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .contenu {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .aide-memoire {
+            font-size: 0.8rem;
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 8px;
+            color: #856404;
+            line-height: 1.3;
+        }
+
+        .aide-memoire strong {
+            color: #d68910;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 30px;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+            display: block;
+        }
+
+        .legend {
+            margin: 20px 30px;
+            padding: 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+        }
+
+        .legend h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .legend-item {
+            display: inline-block;
+            margin: 5px 15px 5px 0;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1200px) {
+            .sequence-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: left;
+            }
+            
+            .sequence-item > div {
+                border-bottom: 1px solid #ecf0f1;
+                padding-bottom: 8px;
+            }
+            
+            .sequence-item > div:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 Conducteur Émission</h1>
+            <p>Brand Seduction Index - Émission de 10 minutes</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">10</span>
+                <span>Minutes</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span>Séquences</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span>Intervenants</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">20</span>
+                <span>Séquences</span>
+            </div>
+        </div>
+
+        <div class="legend">
+            <h3>🎭 Légende des intervenants</h3>
+            <span class="legend-item speaker jonathan">Jonathan</span>
+            <span class="legend-item speaker cedric">Cédric</span>
+            <span class="legend-item speaker duo">Duo</span>
+            <span class="legend-item speaker emma">Emma</span>
+            <span class="legend-item speaker marc">Marc</span>
+        </div>
+
+        <div class="timeline">
+            <!-- ACCROCHE -->
+            <div class="section-header">🎯 I - ACCROCHE : Le problème caché (2 min)</div>
+            
+            <div class="sequence-item accroche">
+                <div class="timecode">00:00</div>
+                <div class="duree">0:15</div>
+                <div class="speaker jonathan">Jonathan</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"73% des candidats abandonnent après avoir cherché des infos sur l'entreprise"</div>
+                <div class="aide-memoire">Chiffre marquant - Parler du <strong>"parcours de séduction candidat"</strong> = concept clé</div>
+            </div>
+
+            <div class="sequence-item accroche">
+                <div class="timecode">00:15</div>
+                <div class="duree">0:15</div>
+                <div class="speaker cedric">Cédric</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"Le problème ? Vous ne savez pas ce qu'ils trouvent sur vous"</div>
+                <div class="aide-memoire">Mettre l'accent sur le <strong>paradoxe</strong> : investissement interne vs communication externe incohérente</div>
+            </div>
+
+            <div class="sequence-item accroche">
+                <div class="timecode">00:30</div>
+                <div class="duree">0:15</div>
+                <div class="speaker jonathan">Jonathan</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"On a enquêté. Et c'est pire que ce qu'on pensait"</div>
+                <div class="aide-memoire">Teaser notre expertise : <strong>14 ans d'accompagnement boîtes de conseil</strong> - on connaît le terrain</div>
+            </div>
+
+            <div class="sequence-item accroche">
+                <div class="timecode">00:45</div>
+                <div class="duree">1:15</div>
+                <div class="speaker duo">Duo</div>
+                <div class="action">Dialogue naturel</div>
+                <div class="contenu">Discussion sur l'impact du problème</div>
+                <div class="aide-memoire">Insister sur l'enjeu business : <strong>guerre des talents commence AVANT le recrutement</strong></div>
+            </div>
+
+            <!-- RÉVÉLATION -->
+            <div class="section-header">💡 II - RÉVÉLATION : Ce que font vraiment les candidats (3 min)</div>
+
+            <div class="sequence-item revelation">
+                <div class="timecode">02:00</div>
+                <div class="duree">0:30</div>
+                <div class="speaker cedric">Cédric</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"Voici le parcours classique : un candidat voit votre offre LinkedIn"</div>
+                <div class="aide-memoire">Décrire la <strong>démarche proactive du candidat</strong> - recherche d'infos déterminante</div>
+            </div>
+
+            <div class="sequence-item revelation">
+                <div class="timecode">02:30</div>
+                <div class="duree">0:30</div>
+                <div class="speaker cedric">Cédric</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"Premier réflexe : Google. Il tape votre nom d'entreprise"</div>
+                <div class="aide-memoire">Évolution comportementale : <strong>candidats de plus en plus regardants</strong></div>
+            </div>
+
+            <div class="sequence-item revelation">
+                <div class="timecode">03:00</div>
+                <div class="duree">0:30</div>
+                <div class="speaker cedric">Cédric</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"Il va chercher 3 types d'infos qui déterminent s'il postule..."</div>
+                <div class="aide-memoire">Teaser les <strong>3 phases sans révéler notre grille d'analyse</strong></div>
+            </div>
+
+            <div class="sequence-item revelation">
+                <div class="timecode">03:30</div>
+                <div class="duree">0:30</div>
+                <div class="speaker jonathan">Jonathan</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"Les 3 moments de vérité :"</div>
+                <div class="aide-memoire">Introduire nos <strong>3 phases clés</strong> mais rester mystérieux sur la méthodo</div>
+            </div>
+
+            <div class="sequence-item revelation">
+                <div class="timecode">04:00</div>
+                <div class="duree">0:20</div>
+                <div class="speaker jonathan">Jonathan</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"- Votre site : il se fait une idée en 30 secondes"</div>
+                <div class="aide-memoire"><strong>Phase 1 : Attractivité</strong> - premier contact crucial</div>
+            </div>
+
+            <div class="sequence-item revelation">
+                <div class="timecode">04:20</div>
+                <div class="duree">0:20</div>
+                <div class="speaker jonathan">Jonathan</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"- Vos réseaux sociaux : il teste l'authenticité"</div>
+                <div class="aide-memoire"><strong>Phase 2 : Désirabilité</strong> - engagement émotionnel</div>
+            </div>
+
+            <div class="sequence-item revelation">
+                <div class="timecode">04:40</div>
+                <div class="duree">0:20</div>
+                <div class="speaker jonathan">Jonathan</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"- Les avis en ligne : il cherche la validation finale"</div>
+                <div class="aide-memoire"><strong>Phase 3 : Réassurance</strong> - validation du choix (+ mentionner IA émergent)</div>
+            </div>
+
+            <!-- CAS PRATIQUE -->
+            <div class="section-header">🔍 III - CAS PRATIQUE : Emma & Marc face à la même entreprise (4 min)</div>
+
+            <div class="sequence-item cas-pratique">
+                <div class="timecode">05:00</div>
+                <div class="duree">0:30</div>
+                <div class="speaker cedric">Cédric</div>
+                <div class="action">Présentation</div>
+                <div class="contenu">"On a demandé à Emma et Marc d'analyser la même entreprise : TechConseil"</div>
+                <div class="aide-memoire">Exemple concret d'audit <strong>Brand Seduction Index</strong> - sans révéler la grille</div>
+            </div>
+
+            <div class="sequence-item cas-pratique">
+                <div class="timecode">05:30</div>
+                <div class="duree">0:30</div>
+                <div class="speaker cedric">Cédric</div>
+                <div class="action">Présentation</div>
+                <div class="contenu">"Site corporate correct mais froid, très bonne présence LinkedIn, mais avis Glassdoor catastrophiques"</div>
+                <div class="aide-memoire">Illustrer <strong>l'incohérence = problème majeur</strong> qu'on sait diagnostiquer</div>
+            </div>
+
+            <div class="sequence-item cas-pratique">
+                <div class="timecode">06:00</div>
+                <div class="duree">1:30</div>
+                <div class="speaker emma">Emma</div>
+                <div class="action">Témoignage</div>
+                <div class="contenu">"TechConseil ? J'ai vu l'offre... [Témoignage complet]"</div>
+                <div class="aide-memoire"><strong>Profil junior</strong> = vision fraîche du marché actuel</div>
+            </div>
+
+            <div class="sequence-item cas-pratique">
+                <div class="timecode">07:30</div>
+                <div class="duree">1:30</div>
+                <div class="speaker marc">Marc</div>
+                <div class="action">Témoignage</div>
+                <div class="contenu">"Même recherche, même conclusion... [Témoignage complet]"</div>
+                <div class="aide-memoire"><strong>Profil senior</strong> = expérience et pragmatisme</div>
+            </div>
+
+            <div class="sequence-item cas-pratique">
+                <div class="timecode">09:00</div>
+                <div class="duree">0:30</div>
+                <div class="speaker jonathan">Jonathan</div>
+                <div class="action">Décryptage</div>
+                <div class="contenu">"Deux générations, même élimination. L'incohérence tue."</div>
+                <div class="aide-memoire">Analyse experte : <strong>nos 2 agences maîtrisent tous les profils candidats</strong></div>
+            </div>
+
+            <div class="sequence-item cas-pratique">
+                <div class="timecode">09:30</div>
+                <div class="duree">0:30</div>
+                <div class="speaker cedric">Cédric</div>
+                <div class="action">Décryptage</div>
+                <div class="contenu">"TechConseil perd 90% de ses candidats potentiels. Ils ne le savent même pas."</div>
+                <div class="aide-memoire">Impact business : <strong>coût d'un recrutement raté = 6 mois de salaire</strong></div>
+            </div>
+
+            <!-- SOLUTION -->
+            <div class="section-header">🎯 IV - SOLUTION : Les clés pour agir (1 min)</div>
+
+            <div class="sequence-item solution">
+                <div class="timecode">09:45</div>
+                <div class="duree">0:15</div>
+                <div class="speaker cedric">Cédric</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"3 actions immédiates : auditez votre première impression digitale"</div>
+                <div class="aide-memoire">Conseil actionnable mais générique - <strong>garder le secret de notre méthodo détaillée</strong></div>
+            </div>
+
+            <div class="sequence-item solution">
+                <div class="timecode">09:30</div>
+                <div class="duree">0:15</div>
+                <div class="speaker jonathan">Jonathan</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"Soyez authentiques sur les réseaux, répondez aux avis"</div>
+                <div class="aide-memoire">Éviter de donner tous nos leviers - <strong>rester dans le conseil de base</strong></div>
+            </div>
+
+            <div class="sequence-item solution">
+                <div class="timecode">09:45</div>
+                <div class="duree">0:15</div>
+                <div class="speaker duo">Duo</div>
+                <div class="action">Face caméra</div>
+                <div class="contenu">"Vous voulez savoir ce que trouvent vos candidats ? On propose un diagnostic gratuit"</div>
+                <div class="aide-memoire">CTA fort : teaser notre <strong>Brand Seduction Index + mentions grosse références</strong> (croissance rapide + 14 ans conseil)</div>
+            </div>
+
+            <div class="sequence-item solution">
+                <div class="timecode">10:00</div>
+                <div class="duree">-</div>
+                <div class="speaker">FIN</div>
+                <div class="action">Générique</div>
+                <div class="contenu">Générique de fin</div>
+                <div class="aide-memoire">Affichage contacts + <strong>références clients grandes boîtes en croissance</strong></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

@@ -66,7 +66,7 @@
 
         .sequence-item {
             display: grid;
-            grid-template-columns: 80px 60px 120px 150px 200px 1fr 250px;
+            grid-template-columns: 80px 60px 120px 150px 200px 1fr 300px;
             gap: 15px;
             padding: 15px 20px;
             margin-bottom: 2px;
@@ -292,13 +292,14 @@
 
         <div style="margin: 20px 30px; padding: 20px; background: #2c3e50; color: white; border-radius: 10px;">
             <h3 style="margin-bottom: 15px; color: #3498db;">📋 Structure du conducteur</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; font-size: 0.9rem;">
-                <div><strong>⏰ Timecode :</strong> Timing précis</div>
-                <div><strong>⏱️ Durée :</strong> Temps de parole</div>
-                <div><strong>🎤 Intervenant :</strong> Qui parle</div>
-                <div><strong>📺 Action :</strong> Type d'intervention</div>
-                <div><strong>💬 Contenu :</strong> Script/Message</div>
-                <div><strong>🧠 Aide-mémoire :</strong> Arguments & conseils</div>
+            <div style="display: grid; grid-template-columns: 80px 60px 120px 150px 200px 1fr 300px; gap: 15px; font-size: 0.9rem; align-items: center;">
+                <div style="text-align: center;"><strong>⏰ Timecode</strong><br><span style="font-size: 0.8rem; opacity: 0.8;">Timing précis</span></div>
+                <div style="text-align: center;"><strong>⏱️ Durée</strong><br><span style="font-size: 0.8rem; opacity: 0.8;">Temps parole</span></div>
+                <div style="text-align: center;"><strong>🎤 Qui parle</strong><br><span style="font-size: 0.8rem; opacity: 0.8;">Intervenant</span></div>
+                <div style="text-align: center;"><strong>📺 Action</strong><br><span style="font-size: 0.8rem; opacity: 0.8;">Type</span></div>
+                <div style="text-align: center;"><strong>💬 Contenu</strong><br><span style="font-size: 0.8rem; opacity: 0.8;">Script/Message</span></div>
+                <div style="text-align: center;"><strong>📝 Éléments techniques</strong><br><span style="font-size: 0.8rem; opacity: 0.8;">Motion/Visuel</span></div>
+                <div style="text-align: center;"><strong>🧠 Aide-mémoire</strong><br><span style="font-size: 0.8rem; opacity: 0.8;">Arguments & conseils</span></div>
             </div>
         </div>
 
@@ -312,6 +313,7 @@
                 <div class="speaker jonathan">Jonathan</div>
                 <div class="action">Face caméra</div>
                 <div class="contenu">"73% des candidats abandonnent après avoir cherché des infos sur l'entreprise"</div>
+                <div style="font-size: 0.8rem; color: #7f8c8d; font-style: italic; text-align: center;">Chiffre 73% en motion design</div>
                 <div class="aide-memoire"><strong>CONCEPT CLÉ :</strong> Introduire le 'parcours de séduction candidat' - démarche proactive que 90% des candidats entreprennent immédiatement après exposition à une offre. Insister : ce n'est plus du recrutement classique, c'est de la séduction pre-candidature.</div>
             </div>
 

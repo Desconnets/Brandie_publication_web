@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conducteur Émission - Brand Seduction Index</title>
+    <title>Workflow Production Vidéo Corporate</title>
     <style>
         * {
             margin: 0;
@@ -21,231 +21,214 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
         }
 
-        .header p {
-            font-size: 1.1rem;
+        .header .subtitle {
+            font-size: 1.2em;
             opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .workflow-container {
+            padding: 40px 30px;
+        }
+
+        .phase {
+            margin-bottom: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .phase:hover {
+            transform: translateY(-5px);
+        }
+
+        .phase-header {
+            padding: 25px 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .phase-1 .phase-header { background: linear-gradient(135deg, #ff6b6b, #ee5a52); }
+        .phase-2 .phase-header { background: linear-gradient(135deg, #4ecdc4, #44a08d); }
+        .phase-3 .phase-header { background: linear-gradient(135deg, #45b7d1, #96c93d); }
+        .phase-4 .phase-header { background: linear-gradient(135deg, #f093fb, #f5576c); }
+
+        .phase-number {
+            background: rgba(255,255,255,0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .phase-content {
+            background: #f8f9fa;
+            padding: 30px;
+        }
+
+        .phase-duration {
+            background: rgba(0,0,0,0.05);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-item {
+            background: white;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .task-item:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .phase-1 .task-item:hover { border-left-color: #ff6b6b; }
+        .phase-2 .task-item:hover { border-left-color: #4ecdc4; }
+        .phase-3 .task-item:hover { border-left-color: #45b7d1; }
+        .phase-4 .task-item:hover { border-left-color: #f093fb; }
+
+        .task-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .task-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .sub-phase {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px dashed #ddd;
+        }
+
+        .sub-phase-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sub-phase-duration {
+            background: rgba(0,0,0,0.1);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 500;
         }
 
         .timeline {
-            padding: 30px;
-            background: #f8f9fa;
+            position: relative;
+            margin: 40px 0;
         }
 
-        .section-header {
-            background: #34495e;
-            color: white;
-            padding: 15px 20px;
-            margin: 20px 0 10px 0;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #ff6b6b, #4ecdc4, #45b7d1, #f093fb);
         }
 
-        .sequence-item {
-            display: grid;
-            grid-template-columns: 80px 60px 120px 150px 200px 300px;
-            gap: 15px;
-            padding: 15px 20px;
-            margin-bottom: 2px;
-            border-left: 4px solid #3498db;
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 80px;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
             background: white;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            align-items: start;
+            border: 4px solid #ddd;
+            z-index: 1;
         }
 
-        .column-header {
-            display: grid;
-            grid-template-columns: 80px 60px 120px 150px 200px 300px;
-            gap: 15px;
-            padding: 10px 20px;
-            margin: 10px 0 5px 0;
-            background: #34495e;
-            color: white;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            align-items: center;
-        }
+        .phase-1 .timeline-marker { border-color: #ff6b6b; }
+        .phase-2 .timeline-marker { border-color: #4ecdc4; }
+        .phase-3 .timeline-marker { border-color: #45b7d1; }
+        .phase-4 .timeline-marker { border-color: #f093fb; }
 
-        .sequence-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .sequence-item.accroche {
-            border-left-color: #e74c3c;
-        }
-
-        .sequence-item.revelation {
-            border-left-color: #f39c12;
-        }
-
-        .sequence-item.cas-pratique {
-            border-left-color: #27ae60;
-        }
-
-        .sequence-item.solution {
-            border-left-color: #9b59b6;
-        }
-
-        .timecode {
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            font-size: 0.9rem;
-            background: #ecf0f1;
-            padding: 5px 8px;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .duree {
-            font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            text-align: center;
-        }
-
-        .speaker {
-            font-weight: 600;
-            padding: 5px 10px;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        .speaker.jonathan {
-            background: #3498db;
-            color: white;
-        }
-
-        .speaker.cedric {
-            background: #e74c3c;
-            color: white;
-        }
-
-        .speaker.duo {
-            background: #9b59b6;
-            color: white;
-        }
-
-        .speaker.emma {
-            background: #27ae60;
-            color: white;
-        }
-
-        .speaker.marc {
-            background: #f39c12;
-            color: white;
-        }
-
-        .action {
-            font-size: 0.85rem;
-            color: #7f8c8d;
-            font-style: italic;
-            text-align: center;
-        }
-
-        .contenu {
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .aide-memoire {
-            font-size: 0.8rem;
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 6px;
-            padding: 8px;
-            color: #856404;
-            line-height: 1.3;
-        }
-
-        .aide-memoire strong {
-            color: #d68910;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        .footer {
+            background: #f8f9fa;
             padding: 30px;
-            background: #2c3e50;
-            color: white;
-        }
-
-        .stat-item {
             text-align: center;
-            padding: 20px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            color: #666;
+            font-style: italic;
         }
 
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #3498db;
-            display: block;
-        }
-
-        .legend {
-            margin: 20px 30px;
-            padding: 20px;
-            background: #ecf0f1;
-            border-radius: 10px;
-        }
-
-        .legend h3 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .legend-item {
-            display: inline-block;
-            margin: 5px 15px 5px 0;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        @media (max-width: 1200px) {
-            .sequence-item {
-                grid-template-columns: 1fr;
-                gap: 10px;
-                text-align: left;
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
             }
             
-            .sequence-item > div {
-                border-bottom: 1px solid #ecf0f1;
-                padding-bottom: 8px;
+            .workflow-container {
+                padding: 20px 15px;
             }
             
-            .sequence-item > div:last-child {
-                border-bottom: none;
+            .phase-content {
+                padding: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
             }
         }
     </style>
@@ -253,323 +236,650 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎬 Conducteur Émission</h1>
-            <p>Brand Seduction Index - Émission de 10 minutes</p>
-        </div>
-
-        <div class="stats">
-            <div class="stat-item">
-                <span class="stat-number">10</span>
-                <span>Minutes</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">4</span>
-                <span>Séquences</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">5</span>
-                <span>Intervenants</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">20</span>
-                <span>Séquences</span>
+            <h1>WORKFLOW DE PRODUCTION VIDÉO CORPORATE</h1>
+            <div class="subtitle">Méthode Brandie pour contenus LinkedIn optimisés - Interviews Courtes</div>
+            <div style="margin-top: 20px; padding: 15px 25px; background: rgba(255,255,255,0.15); border-radius: 10px; font-size: 1.1em; font-weight: 500;">
+                📹 1h00/1h30 de tournage → 6 épisodes snack content adaptés aux algorithmes
             </div>
         </div>
 
-        <div class="legend">
-            <h3>👥 Qui sont les intervenants ?</h3>
-            <div style="margin-bottom: 20px; background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
-                <p><strong>🎯 Objectif :</strong> Émission de 10 minutes pour présenter le Brand Seduction Index et générer des leads qualifiés</p>
-                <p><strong>📍 Format :</strong> Interview fluide + témoignages + décryptage expert</p>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
-                <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #3498db;">
-                    <span class="legend-item speaker jonathan">Jonathan</span>
-                    <p style="font-size: 0.8rem; margin-top: 5px; color: #666;"> Directeur d'études dans l'agence Janvier <br>Expert stratégie et prospective</p>
+        <div class="workflow-container">
+            <div class="timeline">
+                <div class="phase phase-1 timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="phase-header">
+                        <div class="phase-number">1</div>
+                        <div>PRÉPARATION</div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-duration">⏱️ Théorique : 1h | Pratique : 30 min</div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <div class="task-title">Définition des épisodes et objectifs</div>
+                                <div class="task-description">Planification des sujets selon vos objectifs (prospection, recrutement, notoriété...) et angles d'approche stratégiques</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-title">Création du conducteur de tournage</div>
+                                <div class="task-description">Document collaboratif détaillé avec timing, questions clés, transitions et consignes techniques</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-title">Préparation des trames d'interviews</div>
+                                <div class="task-description">Questions ouvertes personnalisées favorisant les anecdotes et témoignages percutants selon votre secteur</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-title">Documentation et brief talent complet</div>
+                                <div class="task-description">Envoi de la documentation préparatoire, thématiques, conseils présentation et mise en condition du talent</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-title">Validation stratégique</div>
+                                <div class="task-description">Réunion de cadrage pour valider les angles, messages clés et adapter le discours à votre cible</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #e74c3c;">
-                    <span class="legend-item speaker cedric">Cédric</span>
-                    <p style="font-size: 0.8rem; margin-top: 5px; color: #666;"> Directeur de Brandie <br>Expert en stratégie</p>
+
+                <div class="phase phase-2 timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="phase-header">
+                        <div class="phase-number">2</div>
+                        <div>TOURNAGE</div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-duration">⏱️ Total : 1h30</div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <div class="task-title">Installation - 30 min</div>
+                                <div class="task-description">Éclairage, son, cadrage</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-title">Captation - 20-50 min</div>
+                                <div class="task-description">Interview continue</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-title">Démontage - 20 min</div>
+                                <div class="task-description">Rangement matériel si mobile</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #27ae60;">
-                    <span class="legend-item speaker emma">Emma</span>
-                    <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Candidate junior<br>Profil digital natif</p>
+
+                <div class="phase phase-3 timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="phase-header">
+                        <div class="phase-number">3</div>
+                        <div>POST-PRODUCTION AUTOMATISÉE</div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-duration">⏱️ Total : 2h30</div>
+                        
+                        <div class="sub-phase">
+                            <div class="sub-phase-title">
+                                3.1 Preprocessing
+                                <span class="sub-phase-duration">35-40 min</span>
+                            </div>
+                            <ul class="task-list">
+                                <li class="task-item">
+                                    <div class="task-title">Dérushage initial - 30 min</div>
+                                    <div class="task-description">Suppression blancs, répétitions, tics de langage via Premiere Pro</div>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-title">Vérification qualité - 30 min</div>
+                                    <div class="task-description">Cohérence des séquences, fluidité du discours</div>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-title">Export audio - 5 min</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sub-phase">
+                            <div class="sub-phase-title">
+                                3.2 Découpage IA assisté
+                                <span class="sub-phase-duration">1h</span>
+                            </div>
+                            <ul class="task-list">
+                                <li class="task-item">
+                                    <div class="task-title">Transcription Whisper</div>
+                                    <div class="task-description">Génération fichier texte complet</div>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-title">Segmentation IA</div>
+                                    <div class="task-description">Script Python + IA pour découper par épisode avec timestamps</div>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-title">Validation découpage</div>
+                                    <div class="task-description">Vérification de la pertinence des segments (1h pour 15-20 min de rush)</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sub-phase">
+                            <div class="sub-phase-title">
+                                3.3 Génération automatique
+                                <span class="sub-phase-duration">Variable selon création graphique</span>
+                            </div>
+                            <ul class="task-list">
+                                <li class="task-item">
+                                    <div class="task-title">Découpe vidéo</div>
+                                    <div class="task-description">Script Python découpe automatiquement selon timestamps</div>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-title">Exports par épisode</div>
+                                    <div class="task-description">2-5 min par segment</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #f39c12;">
-                    <span class="legend-item speaker marc">Marc</span>
-                    <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Candidat senior<br>Profil expérimenté</p>
+
+                <div class="phase phase-4 timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="phase-header">
+                        <div class="phase-number">4</div>
+                        <div>FINALISATION PAR ÉPISODE</div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-duration">⏱️ Total : 53 min/épisode</div>
+                        
+                        <div class="sub-phase">
+                            <div class="sub-phase-title">
+                                4.1 Habillage et design avec templates
+                                <span class="sub-phase-duration">20 min</span>
+                            </div>
+                            <ul class="task-list">
+                                <li class="task-item">
+                                    <div class="task-title">Personnalisation motion - 10 min</div>
+                                    <div class="task-description">Adaptation titres et éléments</div>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-title">Traitement audio - 5 min</div>
+                                    <div class="task-description">Application presets</div>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-title">Ajustements graphiques - 5 min</div>
+                                    <div class="task-description">Adaptation éléments selon épisode</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sub-phase">
+                            <div class="sub-phase-title">
+                                4.2 Finitions
+                                <span class="sub-phase-duration">33 min</span>
+                            </div>
+                            <ul class="task-list">
+                                <li class="task-item">
+                                    <div class="task-title">Ajustements montage - 15 min</div>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-title">Sous-titrage manuel - 15 min</div>
+                                </li>
+                                <li class="task-item">
+                                    <div class="task-title">Export final - 3 min</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-
-
-        <div class="timeline">
-            <!-- ACCROCHE -->
-            <div class="section-header">🎯 I - ACCROCHE : Le problème caché (2 min)</div>
+        <div style="padding: 40px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2 style="font-size: 2.5em; margin-bottom: 20px; text-align: center; font-weight: 700;">🎬 OFFRE STUDIO BRANDIE</h2>
+            <div style="text-align: center; font-size: 1.3em; margin-bottom: 40px; opacity: 0.9;">Production vidéo corporate optimisée LinkedIn</div>
             
-            <div class="column-header">
-                <div>Timecode</div>
-                <div>Durée</div>
-                <div>Qui parle</div>
-                <div>Action</div>
-                <div>Exemple de phrase</div>
-                <div>Aide-mémoire</div>
+            <!-- Notre Méthode -->
+            <div style="background: rgba(255,255,255,0.15); padding: 30px; border-radius: 15px; margin-bottom: 40px; backdrop-filter: blur(10px);">
+                <h3 style="font-size: 1.8em; margin-bottom: 25px; text-align: center;">🚀 NOTRE MÉTHODE</h3>
+                <div style="text-align: center; font-size: 1.4em; font-weight: 600; margin-bottom: 25px; background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px;">
+                    1h à 1h30 de tournage = 3 à 6 épisodes de 2-3 minutes
+                </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; font-size: 1.1em;">
+                <div style="text-align: center; padding: 15px;">✨ Interview fluide et naturelle d'1 heure</div>
+                <div style="text-align: center; padding: 15px;">🤖 Découpage intelligent par IA</div>
+                <div style="text-align: center; padding: 15px;">🎨 Templates motion design déjà créés</div>
+                <div style="text-align: center; padding: 15px;">⚡ Workflow optimisé pour un délai record</div>
             </div>
             
-            <div class="sequence-item accroche">
-                <div class="timecode">00:00</div>
-                <div class="duree">0:15</div>
-                <div class="speaker jonathan">Jonathan</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"73% des candidats abandonnent après avoir cherché des infos sur l'entreprise"</div>
-                <div class="aide-memoire"><strong>CONCEPT CLÉ :</strong> Introduire le 'parcours de séduction candidat' - démarche proactive que 90% des candidats entreprennent immédiatement après exposition à une offre. Insister : ce n'est plus du recrutement classique, c'est de la séduction pre-candidature.</div>
+            <!-- Objectifs des vidéos corporate -->
+            <div style="background: rgba(255,255,255,0.2); padding: 25px; border-radius: 15px; margin-top: 30px;">
+                <h4 style="font-size: 1.4em; margin-bottom: 20px; text-align: center; font-weight: 600;">🎯 OBJECTIFS DE VOS VIDÉOS CORPORATE</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; font-size: 1em;">
+                    <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">📈 Prospection commerciale</div>
+                    <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">🎯 Génération de leads</div>
+                    <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">🏆 Notoriété de marque</div>
+                    <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">👥 Recrutement talents</div>
+                    <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">💼 Vente de services</div>
+                    <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">🏢 Communication interne</div>
+                    <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">👨‍💼 Présentation d'équipes</div>
+                    <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">🤝 Image employeur</div>
+                </div>
             </div>
-
-            <div class="sequence-item accroche">
-                <div class="timecode">00:15</div>
-                <div class="duree">0:15</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"Le problème ? Vous ne savez pas ce qu'ils trouvent sur vous"</div>
-                <div class="aide-memoire"><strong>PARADOXE MAJEUR :</strong> 'Vous investissez massivement dans l'expérience employé interne (Workday, Peakon...) mais votre communication externe manque de cohérence, diluant l'impact de votre marque employeur'. Mentionner que ça freine directement la croissance.</div>
             </div>
-
-            <div class="sequence-item accroche">
-                <div class="timecode">00:30</div>
-                <div class="duree">0:15</div>
-                <div class="speaker jonathan">Jonathan</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"On a enquêté. Et c'est pire que ce qu'on pensait"</div>
-                <div class="aide-memoire"><strong>CRÉDIBILITÉ :</strong> '14 ans d'accompagnement spécialisé des boîtes de conseil et cabinets en croissance rapide. Nos deux agences maîtrisent parfaitement ce terrain.' Teaser : on a des données exclusives sur les comportements candidats.</div>
-            </div>
-
-            <div class="sequence-item accroche">
-                <div class="timecode">00:45</div>
-                <div class="duree">1:15</div>
-                <div class="speaker duo">Duo</div>
-                <div class="action">Dialogue naturel</div>
-                <div class="contenu">Discussion sur l'impact du problème</div>
-                <div class="aide-memoire"><strong>ENJEU BUSINESS :</strong> 'La guerre des talents ne se gagne pas sur les process RH mais bien AVANT, dès l'exposition à l'offre. Chaque recrutement raté coûte 6 mois de salaire.' Transition vers : on va vous montrer ce parcours invisible.</div>
-            </div>
-
-            <!-- RÉVÉLATION -->
-            <div class="section-header">💡 II - RÉVÉLATION : Ce que font vraiment les candidats (3 min)</div>
             
-            <div class="column-header">
-                <div>Timecode</div>
-                <div>Durée</div>
-                <div>Qui parle</div>
-                <div>Action</div>
-                <div>Exemple de phrase</div>
-                <div>Aide-mémoire</div>
+            <!-- Titre Formules -->
+            <h3 style="font-size: 2em; margin-bottom: 35px; text-align: center;">📦 NOS 3 FORMULES</h3>
+        </div>
+        
+        <!-- Les 3 Formules -->
+        <div style="padding: 40px 30px; background: #f8f9fa;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                
+                <!-- Formule Rush -->
+                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 5px solid #e74c3c;">
+                    <div style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 25px; text-align: center;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px; font-weight: 700;">RUSH</h4>
+                        <div style="font-size: 1.1em; opacity: 0.9;">"Les rushs bruts pour votre équipe"</div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h5 style="color: #2c3e50; margin-bottom: 20px; font-size: 1.2em;">Inclus :</h5>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">📹 1h de tournage professionnel (caméra, son, éclairage)</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">📋 Préparation interview + brief talent</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">✂️ Dérushage technique (suppression blancs, tics)</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">💾 Livraison rushs HD prêts au montage</li>
+                            <li style="padding: 8px 0; color: #666;">🤖 Transcription complète Whisper IA</li>
+                        </ul>
+                        <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
+                            <div style="font-weight: 600; margin-bottom: 5px;">⏰ Délai : 48h après tournage</div>
+                            <div style="font-size: 1.3em; font-weight: 700;">💰 Prix : 480€</div>
+                        </div>
+                        <div style="background: #ecf0f1; padding: 15px; border-radius: 10px; color: #7f8c8d; text-align: center; font-size: 0.9em; font-style: italic;">
+                            Idéal pour les entreprises avec équipe interne ou prestataire montage
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formule Standard -->
+                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 5px solid #27ae60; position: relative;">
+                    <div style="position: absolute; top: -10px; right: 20px; background: #f39c12; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.8em; font-weight: 600; z-index: 1;">BESTSELLER</div>
+                    <div style="background: linear-gradient(135deg, #27ae60, #229954); color: white; padding: 25px; text-align: center;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px; font-weight: 700;">STANDARD</h4>
+                        <div style="font-size: 1.1em; opacity: 0.9;">"Clé en main avec nos templates"</div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h5 style="color: #2c3e50; margin-bottom: 20px; font-size: 1.2em;">Inclus :</h5>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">✅ Tout de la formule Rush</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🎯 Accompagnement aux interviews et trames personnalisées</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🤖 Découpage IA en 3-6 épisodes optimisés LinkedIn</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🎬 Montage avec templates motion Brandie</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🎨 Habillage graphique cohérent (intro/outro/transitions)</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">📝 Sous-titrage professionnel</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🔊 Mixage audio optimisé</li>
+                            <li style="padding: 8px 0; color: #666;">📱 Exports HD adaptés réseaux sociaux</li>
+                        </ul>
+                        <div style="background: #27ae60; color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
+                            <div style="font-weight: 600; margin-bottom: 5px;">⚡ Délai : 24h après tournage</div>
+                            <div style="font-size: 1.6em; font-weight: 700; margin-bottom: 5px;">💰 À partir de 158€/mois</div>
+                            <div style="font-size: 1em; opacity: 0.9;">📹 Vidéos professionnelles incluses</div>
+                        </div>
+                        
+                        <!-- Options tarifaires Standard -->
+                        <div style="background: #d5edda; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+                            <h5 style="color: #155724; margin-bottom: 15px; text-align: center; font-size: 1.1em;">💳 Options de paiement</h5>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; color: #155724; font-size: 0.9em;">
+                                <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">📦 6 vidéos</div>
+                                    <div style="margin-bottom: 8px;">950€ total</div>
+                                    <div style="font-size: 0.85em; opacity: 0.8;">158€/mois sur 6 mois</div>
+                                </div>
+                                <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">📦 3 vidéos</div>
+                                    <div style="margin-bottom: 8px;">475€ total</div>
+                                    <div style="font-size: 0.85em; opacity: 0.8;">158€/mois sur 3 mois</div>
+                                </div>
+                            </div>
+                            <div style="background: white; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px;">
+                                <div style="font-weight: 600; margin-bottom: 5px; color: #27ae60;">🎯 Formule annuelle</div>
+                                <div style="margin-bottom: 5px; font-size: 1.1em;">1800€/an (12 vidéos)</div>
+                                <div style="font-size: 0.85em; opacity: 0.8;">150€/mois | Économie de 300€</div>
+                            </div>
+                        </div>
+                        <div style="background: #d5edda; padding: 15px; border-radius: 10px; color: #155724; text-align: center; font-size: 0.9em; font-weight: 600;">
+                            Notre bestseller - Qualité pro, délai express
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formule Premium -->
+                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 5px solid #9b59b6;">
+                    <div style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 25px; text-align: center;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px; font-weight: 700;">PREMIUM</h4>
+                        <div style="font-size: 1.1em; opacity: 0.9;">"Sur-mesure et personnalisée"</div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h5 style="color: #2c3e50; margin-bottom: 20px; font-size: 1.2em;">Inclus :</h5>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">✅ Tout de la formule Standard</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🎯 Accompagnement renforcé interviews + coaching talents</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">📋 Trames d'interviews sur-mesure selon objectifs</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🎨 Création graphique 100% personnalisée</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">✨ Motion design spécifique à votre marque</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🎵 Choix musiques sur-mesure</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🌈 Color grading avancé</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">📱 Formats multiples (LinkedIn, Instagram, YouTube)</li>
+                            <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #ecf0f1;">🔄 Révisions incluses</li>
+                            <li style="padding: 8px 0; color: #666;">📈 Accompagnement stratégie contenu et diffusion</li>
+                        </ul>
+                        <div style="background: #9b59b6; color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
+                            <div style="font-weight: 600; margin-bottom: 5px;">🕐 Délai : 5-7 jours après tournage</div>
+                            <div style="font-size: 1.6em; font-weight: 700; margin-bottom: 5px;">💰 À partir de 433€/mois</div>
+                            <div style="font-size: 1em; opacity: 0.9;">🎨 Création sur-mesure incluse</div>
+                        </div>
+                        
+                        <!-- Options tarifaires Premium -->
+                        <div style="background: #f3e5f5; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+                            <h5 style="color: #6a1b9a; margin-bottom: 15px; text-align: center; font-size: 1.1em;">💎 Options de paiement premium</h5>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; color: #6a1b9a; font-size: 0.9em;">
+                                <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">📦 6 vidéos</div>
+                                    <div style="margin-bottom: 8px;">2600€ total</div>
+                                    <div style="font-size: 0.85em; opacity: 0.8;">433€/mois sur 6 mois</div>
+                                </div>
+                                <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">📦 3 vidéos</div>
+                                    <div style="margin-bottom: 8px;">1300€ total</div>
+                                    <div style="font-size: 0.85em; opacity: 0.8;">433€/mois sur 3 mois</div>
+                                </div>
+                            </div>
+                            <div style="background: white; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px;">
+                                <div style="font-weight: 600; margin-bottom: 5px; color: #9b59b6;">🏆 Formule annuelle premium</div>
+                                <div style="margin-bottom: 5px; font-size: 1.1em;">4800€/an (12 vidéos)</div>
+                                <div style="font-size: 0.85em; opacity: 0.8;">400€/mois | Économie de 800€</div>
+                            </div>
+                        </div>
+                        <div style="background: #f3e5f5; padding: 15px; border-radius: 10px; color: #6a1b9a; text-align: center; font-size: 0.9em; font-weight: 600;">
+                            Excellence créative pour marques exigeantes
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="sequence-item revelation">
-                <div class="timecode">02:00</div>
-                <div class="duree">0:30</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"Voici le parcours classique : un candidat voit votre offre LinkedIn"</div>
-                <div class="aide-memoire"><strong>COMPORTEMENT CANDIDAT :</strong> 'Démarche proactive de recherche d'informations qui détermine si le talent postule chez vous, préfère la concurrence, ou reste dans son organisation actuelle.' Insister : c'est immédiat, systématique, et déterminant.</div>
-            </div>
-
-            <div class="sequence-item revelation">
-                <div class="timecode">02:30</div>
-                <div class="duree">0:30</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"Premier réflexe : Google. Il tape votre nom d'entreprise"</div>
-                <div class="aide-memoire"><strong>ÉVOLUTION MARCHÉ :</strong> 'Dans un marché du travail de plus en plus concurrentiel, les candidats sont de plus en plus regardants et exigeants.' Mentionner que ce comportement s'intensifie avec les nouvelles générations et l'accès à l'information.</div>
-            </div>
-
-            <div class="sequence-item revelation">
-                <div class="timecode">03:00</div>
-                <div class="duree">0:30</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"Il va chercher 3 types d'infos qui déterminent s'il postule..."</div>
-                <div class="aide-memoire"><strong>NOTRE INNOVATION :</strong> 'C'est pourquoi nous avons développé le Brand Seduction Index, une méthodologie qui analyse et optimise l'ensemble du parcours pré-candidature.' ATTENTION : ne pas révéler notre grille d'analyse détaillée.</div>
-            </div>
-
-            <div class="sequence-item revelation">
-                <div class="timecode">03:30</div>
-                <div class="duree">0:30</div>
-                <div class="speaker jonathan">Jonathan</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"Les 3 moments de vérité :"</div>
-                <div class="aide-memoire"><strong>TEASING MÉTHODOLOGIE :</strong> 'Ce parcours se décompose en 3 phases critiques que nous mesurons précisément.' Rester mystérieux sur le COMMENT mais expliquer l'importance de chaque phase pour l'attractivité employeur.</div>
-            </div>
-
-            <div class="sequence-item revelation">
-                <div class="timecode">04:00</div>
-                <div class="duree">0:15</div>
-                <div class="speaker jonathan">Jonathan</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"Phase 1 : Votre site web - il se fait une idée en 30 secondes"</div>
-                <div class="aide-memoire"><strong>PHASE 1 - ATTRACTIVITÉ :</strong> 'Via votre site internet et contenus institutionnels : premier contact crucial qui positionne votre expertise.' Jonathan explique le concept de manière pédagogique.</div>
-            </div>
-
-            <div class="sequence-item revelation">
-                <div class="timecode">04:15</div>
-                <div class="duree">0:15</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Dialogue naturel</div>
-                <div class="contenu">"Exemple : site corporate froid vs site qui montre l'humain derrière l'expertise"</div>
-                <div class="aide-memoire"><strong>EXEMPLE CONCRET :</strong> Cédric illustre immédiatement avec un cas pratique. Mentionner que nos experts analysent via une grille sur mesure les critères objectifs et subjectifs.</div>
-            </div>
-
-            <div class="sequence-item revelation">
-                <div class="timecode">04:30</div>
-                <div class="duree">0:15</div>
-                <div class="speaker jonathan">Jonathan</div>
-                <div class="action">Dialogue naturel</div>
-                <div class="contenu">"Phase 2 : Vos réseaux sociaux - il teste l'authenticité"</div>
-                <div class="aide-memoire"><strong>PHASE 2 - DÉSIRABILITÉ :</strong> 'Via vos réseaux sociaux : où se joue l'authenticité et l'engagement émotionnel.' Jonathan enchaîne sur le concept de la phase 2.</div>
-            </div>
-
-            <div class="sequence-item revelation">
-                <div class="timecode">04:45</div>
-                <div class="duree">0:15</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Dialogue naturel</div>
-                <div class="contenu">"LinkedIn actif avec du contenu expert vs profil fantôme ou posts génériques"</div>
-                <div class="aide-memoire"><strong>EXEMPLE CONCRET :</strong> Cédric donne un exemple précis de la différence. Expliquer que c'est là que le candidat teste votre cohérence entre discours et réalité.</div>
-            </div>
-
-            <div class="sequence-item revelation">
-                <div class="timecode">05:00</div>
-                <div class="duree">0:15</div>
-                <div class="speaker jonathan">Jonathan</div>
-                <div class="action">Dialogue naturel</div>
-                <div class="contenu">"Phase 3 : Les avis en ligne - il cherche la validation finale"</div>
-                <div class="aide-memoire"><strong>PHASE 3 - RÉASSURANCE :</strong> 'Via les plateformes d'avis et l'IA : désormais incontournables pour se rassurer.' Jonathan présente la dernière phase critique.</div>
-            </div>
-
-            <div class="sequence-item revelation">
-                <div class="timecode">05:15</div>
-                <div class="duree">0:15</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Dialogue naturel</div>
-                <div class="contenu">"Glassdoor catastrophique ou pas d'avis du tout = signal d'alarme immédiat"</div>
-                <div class="aide-memoire"><strong>EXEMPLE CONCRET :</strong> Cédric conclut avec l'impact direct sur la décision. INNOVATION : mentionner la pratique émergente de demander conseil directement aux IA.</div>
-            </div>
-
-            <!-- CAS PRATIQUE -->
-            <div class="section-header">🔍 III - CAS PRATIQUE : Emma & Marc face à la même entreprise (4 min)</div>
+        <!-- TEMPS DE PRODUCTION PAR FORMULE -->
+        <div style="padding: 40px 30px; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white;">
+            <h2 style="font-size: 2.2em; margin-bottom: 20px; text-align: center; font-weight: 700;">⏱️ TEMPS DE PRODUCTION PAR FORMULE</h2>
+            <div style="text-align: center; font-size: 1.2em; margin-bottom: 40px; opacity: 0.9;">Détail des délais et charge de travail pour chaque pack</div>
             
-            <div class="column-header">
-                <div>Timecode</div>
-                <div>Durée</div>
-                <div>Qui parle</div>
-                <div>Action</div>
-                <div>Exemple de phrase</div>
-                <div>Aide-mémoire</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                
+                <!-- Temps Formule Rush -->
+                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border-top: 5px solid #e74c3c;">
+                    <div style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 25px; text-align: center;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px; font-weight: 700;">⚡ RUSH - TEMPS</h4>
+                        <div style="font-size: 1.1em; opacity: 0.9;">"Livraison express 48h"</div>
+                    </div>
+                    <div style="padding: 30px; color: #333;">
+                        <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #e74c3c;">
+                            <h5 style="color: #c0392b; margin-bottom: 15px; font-size: 1.2em;">📅 Phases de production :</h5>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 1 :</strong> Préparation (30 min)</li>
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 2 :</strong> Tournage (1h30)</li>
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 3 :</strong> Post-production automatisée (2h30)</li>
+                                <li style="padding: 8px 0; color: #666;"><strong>Livraison :</strong> Rushs HD + Transcription IA (30min)</li>
+                            </ul>
+                        </div>
+                        <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 10px; text-align: center;">
+                            <div style="font-weight: 600; margin-bottom: 5px;">⏰ Temps total : 5h</div>
+                            <div style="font-size: 1.1em; opacity: 0.9;">Délai : 48h maximum</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Temps Formule Standard -->
+                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border-top: 5px solid #27ae60; position: relative;">
+                    <div style="position: absolute; top: -10px; right: 20px; background: #f39c12; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.8em; font-weight: 600; z-index: 1;">OPTIMAL</div>
+                    <div style="background: linear-gradient(135deg, #27ae60, #229954); color: white; padding: 25px; text-align: center;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px; font-weight: 700;">🚀 STANDARD - TEMPS</h4>
+                        <div style="font-size: 1.1em; opacity: 0.9;">"Production complète 24h"</div>
+                    </div>
+                    <div style="padding: 30px; color: #333;">
+                        <div style="background: #f0fff4; padding: 20px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #27ae60;">
+                            <h5 style="color: #229954; margin-bottom: 15px; font-size: 1.2em;">📅 Phases de production :</h5>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 1 :</strong> Préparation (30 min)</li>
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 2 :</strong> Tournage (1h30)</li>
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 3 :</strong> Post-production automatisée (2h30)</li>
+                                <li style="padding: 8px 0; color: #666;"><strong>Phase 4 :</strong> Finalisation par épisode (5h18 pour 6 épisodes)</li>
+                            </ul>
+                        </div>
+                        <div style="background: #27ae60; color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 15px;">
+                            <div style="font-weight: 600; margin-bottom: 5px;">⏰ Temps total : 10h18</div>
+                            <div style="font-size: 1.1em; opacity: 0.9;">Délai : 24h maximum</div>
+                        </div>
+                        <div style="background: #d5edda; padding: 10px; border-radius: 8px; color: #155724; text-align: center; font-size: 0.9em;">
+                            📦 <strong>3 à 6 épisodes livrés</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Temps Formule Premium -->
+                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border-top: 5px solid #9b59b6;">
+                    <div style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 25px; text-align: center;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px; font-weight: 700;">💎 PREMIUM - TEMPS</h4>
+                        <div style="font-size: 1.1em; opacity: 0.9;">"Création sur-mesure 5-7j"</div>
+                    </div>
+                    <div style="padding: 30px; color: #333;">
+                        <div style="background: #faf5ff; padding: 20px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #9b59b6;">
+                            <h5 style="color: #8e44ad; margin-bottom: 15px; font-size: 1.2em;">📅 Phases de production :</h5>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 1 :</strong> Préparation renforcée (1h)</li>
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 2 :</strong> Tournage (1h30)</li>
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 3 :</strong> Post-production automatisée (2h30)</li>
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 4 :</strong> Création graphique personnalisée (12h)</li>
+                                <li style="padding: 8px 0; color: #666; border-bottom: 1px solid #f1f2f6;"><strong>Phase 5 :</strong> Motion design sur-mesure (8h)</li>
+                                <li style="padding: 8px 0; color: #666;"><strong>Phase 6 :</strong> Finalisation premium + Révisions (8h)</li>
+                            </ul>
+                        </div>
+                        <div style="background: #9b59b6; color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 15px;">
+                            <div style="font-weight: 600; margin-bottom: 5px;">⏰ Temps total : 22h18</div>
+                            <div style="font-size: 1.1em; opacity: 0.9;">Délai : 5-7 jours</div>
+                        </div>
+                        <div style="background: #f3e5f5; padding: 10px; border-radius: 8px; color: #6a1b9a; text-align: center; font-size: 0.9em;">
+                            🎨 <strong>Création 100% personnalisée</strong>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="sequence-item cas-pratique">
-                <div class="timecode">05:30</div>
-                <div class="duree">0:30</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Présentation</div>
-                <div class="contenu">"On a demandé à Emma et Marc d'analyser la même entreprise : TechConseil"</div>
-                <div class="aide-memoire"><strong>EXEMPLE CONCRET :</strong> 'Nous avons audité leur écosystème digital pour établir leur Brand Seduction Index actuel.' Expliquer qu'on analyse via nos experts métiers (stratégie, création, digital, social media) SANS révéler la grille détaillée.</div>
-            </div>
-
-            <div class="sequence-item cas-pratique">
-                <div class="timecode">06:00</div>
-                <div class="duree">0:30</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Présentation</div>
-                <div class="contenu">"Site corporate correct mais froid, très bonne présence LinkedIn, mais avis Glassdoor catastrophiques"</div>
-                <div class="aide-memoire"><strong>DIAGNOSTIC D'INCOHÉRENCE :</strong> 'L'objectif n'est pas de révolutionner leur communication externe, mais d'impulser une cohérence stratégique qui amplifie l'attractivité employeur.' Montrer qu'on sait identifier les problèmes que les entreprises ne voient pas.</div>
-            </div>
-
-            <div class="sequence-item cas-pratique">
-                <div class="timecode">06:30</div>
-                <div class="duree">1:30</div>
-                <div class="speaker emma">Emma</div>
-                <div class="action">Témoignage</div>
-                <div class="contenu">"TechConseil ? J'ai vu l'offre... [Témoignage complet]"</div>
-                <div class="aide-memoire"><strong>PROFIL JUNIOR-DIGITAL :</strong> Représente la nouvelle génération de candidats, ultra-connectée, qui fait ses recherches de manière instinctive et rapide. Son témoignage illustre l'évolution comportementale des talents.</div>
-            </div>
-
-            <div class="sequence-item cas-pratique">
-                <div class="timecode">08:00</div>
-                <div class="duree">1:30</div>
-                <div class="speaker marc">Marc</div>
-                <div class="action">Témoignage</div>
-                <div class="contenu">"Même recherche, même conclusion... [Témoignage complet]"</div>
-                <div class="aide-memoire"><strong>PROFIL SENIOR-EXPÉRIMENTÉ :</strong> Représente l'approche plus méthodique et pragmatique. Montre que le problème d'incohérence touche TOUS les profils, pas seulement les jeunes. Universalité du problème.</div>
-            </div>
-
-            <div class="sequence-item cas-pratique">
-                <div class="timecode">09:30</div>
-                <div class="duree">0:15</div>
-                <div class="speaker jonathan">Jonathan</div>
-                <div class="action">Décryptage</div>
-                <div class="contenu">"Deux générations, même élimination. L'incohérence tue."</div>
-                <div class="aide-memoire"><strong>EXPERTISE TRANSVERSALE :</strong> 'Nos experts métiers analysent via une grille conçue sur mesure les critères objectifs et subjectifs du potentiel de séduction.' Insister : nos 2 agences maîtrisent tous les profils candidats grâce à 14 ans d'expérience.</div>
-            </div>
-
-            <div class="sequence-item cas-pratique">
-                <div class="timecode">09:45</div>
-                <div class="duree">0:15</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Décryptage</div>
-                <div class="contenu">"TechConseil perd 90% de ses candidats potentiels. Ils ne le savent même pas."</div>
-                <div class="aide-memoire"><strong>ROI BUSINESS :</strong> 'Cette démarche permet de passer d'une attraction de talents subie à une stratégie proactive et mesurée. Chaque recrutement raté coûte 6 mois de salaire, optimiser le parcours de séduction devient un investissement rentable.'</div>
-            </div>
-
-            <!-- SOLUTION -->
-            <div class="section-header">🎯 IV - SOLUTION : Les clés pour agir (1 min)</div>
             
-            <div class="column-header">
-                <div>Timecode</div>
-                <div>Durée</div>
-                <div>Qui parle</div>
-                <div>Action</div>
-                <div>Exemple de phrase</div>
-                <div>Aide-mémoire</div>
+            <!-- Récapitulatif comparatif -->
+            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin-top: 40px; backdrop-filter: blur(10px);">
+                <h3 style="font-size: 1.6em; margin-bottom: 25px; text-align: center;">📊 COMPARATIF TEMPS & DÉLAIS</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+                    <div style="background: rgba(231,76,60,0.2); padding: 20px; border-radius: 10px;">
+                        <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px;">⚡ RUSH</div>
+                        <div style="font-size: 1.1em; margin-bottom: 5px;">5h de travail</div>
+                        <div style="font-size: 0.9em; opacity: 0.8;">48h maximum</div>
+                    </div>
+                    <div style="background: rgba(39,174,96,0.2); padding: 20px; border-radius: 10px;">
+                        <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px;">🚀 STANDARD</div>
+                        <div style="font-size: 1.1em; margin-bottom: 5px;">10h18 de travail</div>
+                        <div style="font-size: 0.9em; opacity: 0.8;">24h maximum</div>
+                    </div>
+                    <div style="background: rgba(155,89,182,0.2); padding: 20px; border-radius: 10px;">
+                        <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px;">💎 PREMIUM</div>
+                        <div style="font-size: 1.1em; margin-bottom: 5px;">22h18 de travail</div>
+                        <div style="font-size: 0.9em; opacity: 0.8;">5-7 jours</div>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="sequence-item solution">
-                <div class="timecode">10:00</div>
-                <div class="duree">0:10</div>
-                <div class="speaker cedric">Cédric</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"3 actions immédiates : auditez votre première impression digitale"</div>
-                <div class="aide-memoire"><strong>CONSEIL GÉNÉRIQUE :</strong> Donner des actions basiques pour montrer notre expertise SANS révéler notre méthodologie propriétaire détaillée. Rester dans les conseils que tout le monde peut donner.</div>
+        <div style="padding: 40px 30px; background: #f8f9fa; border-top: 3px solid #e9ecef;">
+            <!-- TEMPS DE PRODUCTION -->
+            <div style="margin-bottom: 40px;">
+                <h2 style="color: #2c3e50; font-size: 1.8em; margin-bottom: 30px; text-align: center; padding-bottom: 15px; border-bottom: 3px solid #3498db;">⏱️ TEMPS DE PRODUCTION</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px;">
+                    <!-- Création Templates -->
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: #e74c3c; margin-bottom: 20px; font-size: 1.3em;">🎨 CRÉATION INITIALE DES TEMPLATES</h3>
+                        <div style="font-size: 0.9em; color: #666; margin-bottom: 15px; font-style: italic;">(une fois)</div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: #2c3e50; margin-bottom: 10px;">Design et Motion (8h)</h4>
+                            <ul style="margin-left: 20px; color: #666;">
+                                <li>Design graphique : 3h (charte, éléments, titres)</li>
+                                <li>Motion design : 4h (animation intro/outro, transitions)</li>
+                                <li>Tests et ajustements : 1h</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: #2c3e50; margin-bottom: 10px;">Templates techniques (4h)</h4>
+                            <div style="font-size: 0.9em; color: #666; margin-bottom: 10px;">Proposer 3 modèles</div>
+                            <ul style="margin-left: 20px; color: #666;">
+                                <li>Presets Premiere : 2h (séquences types, effets)</li>
+                                <li>Presets audio : 1h (mixage type, musiques)</li>
+                                <li>Documentation : 1h (guide utilisation templates)</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 10px; text-align: center; font-weight: 600;">
+                            Total création templates : 12h (1.5 jour)
+                        </div>
+                    </div>
+                    
+                    <!-- Production Série -->
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: #27ae60; margin-bottom: 20px; font-size: 1.3em;">🎬 PRODUCTION SÉRIE</h3>
+                        <div style="font-size: 0.9em; color: #666; margin-bottom: 15px; font-style: italic;">(6 épisodes)</div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: #2c3e50; margin-bottom: 10px;">Phases communes :</h4>
+                            <ul style="margin-left: 20px; color: #666;">
+                                <li>Préparation : 1h</li>
+                                <li>Tournage : 1h30</li>
+                                <li>Post-production partiellement automatisée : 2h30</li>
+                                <li><strong>Sous-total phases communes : 5h</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: #2c3e50; margin-bottom: 10px;">Par épisode (53 min × 6) :</h4>
+                            <ul style="margin-left: 20px; color: #666;">
+                                <li>Finalisation avec templates : 5h18</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; border-left: 3px solid #27ae60;">
+                            <h4 style="color: #27ae60; margin-bottom: 15px; font-size: 1.1em;">📊 Répartition des temps :</h4>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                                <div style="background: white; padding: 12px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <h5 style="color: #27ae60; margin-bottom: 8px; font-size: 0.95em;">Par épisode (moyenne)</h5>
+                                    <div style="color: #666; font-size: 0.9em; line-height: 1.4;">
+                                        <div>Phases communes : 50 min</div>
+                                        <div>Finalisation : 53 min</div>
+                                        <div style="border-top: 1px solid #ddd; margin-top: 5px; padding-top: 5px; font-weight: 600;">Total : 1h43</div>
+                                    </div>
+                                </div>
+                                
+                                <div style="background: white; padding: 12px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <h5 style="color: #27ae60; margin-bottom: 8px; font-size: 0.95em;">Pour 6 épisodes (total)</h5>
+                                    <div style="color: #666; font-size: 0.9em; line-height: 1.4;">
+                                        <div>Phases communes : 5h</div>
+                                        <div>Finalisations : 5h18</div>
+                                        <div style="border-top: 1px solid #ddd; margin-top: 5px; padding-top: 5px; font-weight: 600;">Total : 10h18</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: #27ae60; color: white; padding: 12px; border-radius: 8px; text-align: center; font-weight: 600;">
+                                📦 Production complète série : 10h18 (environ 1.5 jour)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Temps Totaux -->
+                <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 40px;">
+                    <h3 style="color: #8e44ad; margin-bottom: 25px; font-size: 1.4em; text-align: center;">📊 TEMPS TOTAUX RÉELS</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <h4 style="margin-bottom: 15px; font-size: 1.2em;">Première série :</h4>
+                            <div style="margin-bottom: 10px;">Création templates : 12h</div>
+                            <div style="margin-bottom: 10px;">Production série : 10h18</div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 5px; font-weight: bold; font-size: 1.1em;">
+                                TOTAL : 22h18 (environ 3 jours)
+                            </div>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <h4 style="margin-bottom: 15px; font-size: 1.2em;">Séries suivantes :</h4>
+                            <div style="margin-bottom: 10px;">TOTAL : 10h18 (environ 1.5 jour)</div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 5px; font-weight: bold; font-size: 1.1em;">
+                                Soit 1h43 par épisode
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <!-- POINTS CLÉS -->
+            <div style="margin-bottom: 40px;">
+                <h2 style="color: #2c3e50; font-size: 1.8em; margin-bottom: 30px; text-align: center; padding-bottom: 15px; border-bottom: 3px solid #f39c12;">💡 POINTS CLÉS</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: #f39c12; margin-bottom: 20px; font-size: 1.3em;">✅ Avantages templates :</h3>
+                        <ul style="margin-left: 20px; color: #666; line-height: 1.8;">
+                            <li>Cohérence visuelle garantie</li>
+                            <li>Gain de temps significatif dès la 2ème série</li>
+                            <li>Facilité de formation nouveaux collaborateurs</li>
+                            <li>Possibilité de déléguer certaines tâches</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: #e67e22; margin-bottom: 20px; font-size: 1.3em;">📈 ROI templates :</h3>
+                        <ul style="margin-left: 20px; color: #666; line-height: 1.8;">
+                            <li>Rentabilisé dès la 2ème série</li>
+                            <li>Gain de temps de 50% sur les phases graphiques</li>
+                            <li>Standardisation du processus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STACK TECHNIQUE -->
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                <h2 style="color: #2c3e50; font-size: 1.8em; margin-bottom: 25px; text-align: center; padding-bottom: 15px; border-bottom: 3px solid #34495e;">🛠️ STACK TECHNIQUE</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div style="background: #ecf0f1; padding: 20px; border-radius: 10px; border-left: 4px solid #e74c3c;">
+                        <h4 style="color: #c0392b; margin-bottom: 10px;">📹 Tournage :</h4>
+                        <div style="color: #666; font-size: 0.9em;">Setup portable (caméra, micro-cravate, éclairage LED)</div>
+                    </div>
+                    
+                    <div style="background: #ecf0f1; padding: 20px; border-radius: 10px; border-left: 4px solid #3498db;">
+                        <h4 style="color: #2980b9; margin-bottom: 10px;">✂️ Montage :</h4>
+                        <div style="color: #666; font-size: 0.9em;">Premiere Pro + scripts Python</div>
+                    </div>
+                    
+                    <div style="background: #ecf0f1; padding: 20px; border-radius: 10px; border-left: 4px solid #9b59b6;">
+                        <h4 style="color: #8e44ad; margin-bottom: 10px;">🤖 IA :</h4>
+                        <div style="color: #666; font-size: 0.9em;">Whisper (transcription) + GPT (segmentation)</div>
+                    </div>
+                    
+                    <div style="background: #ecf0f1; padding: 20px; border-radius: 10px; border-left: 4px solid #e67e22;">
+                        <h4 style="color: #d35400; margin-bottom: 10px;">🎨 Motion :</h4>
+                        <div style="color: #666; font-size: 0.9em;">Adobe Express + templates</div>
+                    </div>
+                    
+                    <div style="background: #ecf0f1; padding: 20px; border-radius: 10px; border-left: 4px solid #27ae60;">
+                        <h4 style="color: #229954; margin-bottom: 10px;">📝 Sous-titres :</h4>
+                        <div style="color: #666; font-size: 0.9em;">Premiere Pro auto + correction manuelle</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div class="sequence-item solution">
-                <div class="timecode">10:10</div>
-                <div class="duree">0:10</div>
-                <div class="speaker jonathan">Jonathan</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"Soyez authentiques sur les réseaux, répondez aux avis"</div>
-                <div class="aide-memoire"><strong>CONSEIL ÉVIDENT :</strong> Volontairement rester dans le basique pour créer la frustration et l'envie d'en savoir plus sur notre méthode complète. Ne pas donner nos vrais leviers différenciants.</div>
-            </div>
-
-            <div class="sequence-item solution">
-                <div class="timecode">10:20</div>
-                <div class="duree">0:20</div>
-                <div class="speaker duo">Duo</div>
-                <div class="action">Face caméra</div>
-                <div class="contenu">"Vous voulez savoir ce que trouvent vos candidats ? On propose un diagnostic gratuit"</div>
-                <div class="aide-memoire"><strong>CTA PUISSANT :</strong> 'Diagnostic gratuit de votre Brand Seduction Index.' MENTIONS CRÉDIBILITÉ : '14 ans d'accompagnement de grandes entreprises en croissance rapide, nos références parlent pour nous.' Créer l'urgence et l'exclusivité.</div>
-            </div>
-
-            <div class="sequence-item solution">
-                <div class="timecode">10:40</div>
-                <div class="duree">-</div>
-                <div class="speaker">FIN</div>
-                <div class="action">Générique</div>
-                <div class="contenu">Générique de fin</div>
-                <div class="aide-memoire">Affichage contacts + <strong>références clients grandes boîtes en croissance</strong></div>
-            </div>
+        <div class="footer">
+            Workflow optimisé pour la création de contenus vidéo corporate courts et engageants
         </div>
     </div>
 </body>
-</html> 
+</html>

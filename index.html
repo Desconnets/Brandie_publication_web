@@ -78,6 +78,7 @@
         .phase-2 .phase-header { background: linear-gradient(135deg, #4ecdc4, #44a08d); }
         .phase-3 .phase-header { background: linear-gradient(135deg, #45b7d1, #96c93d); }
         .phase-4 .phase-header { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .phase-5 .phase-header { background: linear-gradient(135deg, #e67e22, #d35400); }
 
         .phase-number {
             background: rgba(255,255,255,0.2);
@@ -130,6 +131,7 @@
         .phase-2 .task-item:hover { border-left-color: #4ecdc4; }
         .phase-3 .task-item:hover { border-left-color: #45b7d1; }
         .phase-4 .task-item:hover { border-left-color: #f093fb; }
+        .phase-5 .task-item:hover { border-left-color: #e67e22; }
 
         .task-title {
             font-weight: 600;
@@ -180,7 +182,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, #ff6b6b, #4ecdc4, #45b7d1, #f093fb);
+            background: linear-gradient(to bottom, #ff6b6b, #4ecdc4, #45b7d1, #f093fb, #e67e22);
         }
 
         .timeline-item {
@@ -205,6 +207,7 @@
         .phase-2 .timeline-marker { border-color: #4ecdc4; }
         .phase-3 .timeline-marker { border-color: #45b7d1; }
         .phase-4 .timeline-marker { border-color: #f093fb; }
+        .phase-5 .timeline-marker { border-color: #e67e22; }
 
         .footer {
             background: #f8f9fa;
@@ -285,18 +288,18 @@
                         <div>TOURNAGE</div>
                     </div>
                     <div class="phase-content">
-                        <div class="phase-duration">⏱️ Total : 1h30</div>
+                        <div class="phase-duration">⏱️ Total : 2h</div>
                         <ul class="task-list">
                             <li class="task-item">
                                 <div class="task-title">Installation - 30 min</div>
                                 <div class="task-description">Éclairage, son, cadrage</div>
                             </li>
                             <li class="task-item">
-                                <div class="task-title">Captation - 20-50 min</div>
-                                <div class="task-description">Interview continue</div>
+                                <div class="task-title">Accueil client + Captation - 1h</div>
+                                <div class="task-description">Accueil, mise en condition, interview continue</div>
                             </li>
                             <li class="task-item">
-                                <div class="task-title">Démontage - 20 min</div>
+                                <div class="task-title">Démontage - 30 min</div>
                                 <div class="task-description">Rangement matériel si mobile</div>
                             </li>
                         </ul>
@@ -315,7 +318,7 @@
                         <div class="sub-phase">
                             <div class="sub-phase-title">
                                 3.1 Preprocessing
-                                <span class="sub-phase-duration">35-40 min</span>
+                                <span class="sub-phase-duration">1h05</span>
                             </div>
                             <ul class="task-list">
                                 <li class="task-item">
@@ -356,7 +359,7 @@
                         <div class="sub-phase">
                             <div class="sub-phase-title">
                                 3.3 Génération automatique
-                                <span class="sub-phase-duration">Variable selon création graphique</span>
+                                <span class="sub-phase-duration">25 min</span>
                             </div>
                             <ul class="task-list">
                                 <li class="task-item">
@@ -421,6 +424,31 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="phase phase-5 timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="phase-header">
+                        <div class="phase-number">5</div>
+                        <div>RETOUR CLIENT</div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-duration">⏱️ Total : 1h par épisode</div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <div class="task-title">Présentation V1 - 20 min</div>
+                                <div class="task-description">Présentation de la première version au client et recueil des retours</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-title">Intégration modifications - 30 min</div>
+                                <div class="task-description">Application des corrections et ajustements demandés</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-title">Validation V2 finale - 10 min</div>
+                                <div class="task-description">Présentation version finale et validation définitive</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -434,12 +462,12 @@
                 <div style="text-align: center; font-size: 1.4em; font-weight: 600; margin-bottom: 25px; background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px;">
                     1h à 1h30 de tournage = 3 à 6 épisodes de 2-3 minutes
                 </div>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; font-size: 1.1em;">
-                <div style="text-align: center; padding: 15px;">✨ Interview fluide et naturelle d'1 heure</div>
-                <div style="text-align: center; padding: 15px;">🤖 Découpage intelligent par IA</div>
-                <div style="text-align: center; padding: 15px;">🎨 Templates motion design déjà créés</div>
-                <div style="text-align: center; padding: 15px;">⚡ Workflow optimisé pour un délai record</div>
-            </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; font-size: 1.1em;">
+                    <div style="text-align: center; padding: 15px;">✨ Interview fluide et naturelle d'1 heure</div>
+                    <div style="text-align: center; padding: 15px;">🤖 Découpage intelligent par IA</div>
+                    <div style="text-align: center; padding: 15px;">🎨 Templates motion design déjà créés</div>
+                    <div style="text-align: center; padding: 15px;">⚡ Workflow optimisé pour un délai record</div>
+                </div>
             
             <!-- Objectifs des vidéos corporate -->
             <div style="background: rgba(255,255,255,0.2); padding: 25px; border-radius: 15px; margin-top: 30px;">
@@ -482,7 +510,7 @@
                         </ul>
                         <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
                             <div style="font-weight: 600; margin-bottom: 5px;">⏰ Délai : 48h après tournage</div>
-                            <div style="font-size: 1.3em; font-weight: 700;">💰 Prix : 480€</div>
+                            <div style="font-size: 1.3em; font-weight: 700;">💰 Prix : 530€</div>
                         </div>
                         <div style="background: #ecf0f1; padding: 15px; border-radius: 10px; color: #7f8c8d; text-align: center; font-size: 0.9em; font-style: italic;">
                             Idéal pour les entreprises avec équipe interne ou prestataire montage
@@ -511,7 +539,7 @@
                         </ul>
                         <div style="background: #27ae60; color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
                             <div style="font-weight: 600; margin-bottom: 5px;">⚡ Délai : 24h après tournage</div>
-                            <div style="font-size: 1.6em; font-weight: 700; margin-bottom: 5px;">💰 À partir de 158€/mois</div>
+                            <div style="font-size: 1.6em; font-weight: 700; margin-bottom: 5px;">💰 À partir de 212€/mois</div>
                             <div style="font-size: 1em; opacity: 0.9;">📹 Vidéos professionnelles incluses</div>
                         </div>
                         
@@ -521,19 +549,19 @@
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; color: #155724; font-size: 0.9em;">
                                 <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
                                     <div style="font-weight: 600; margin-bottom: 5px;">📦 6 vidéos</div>
-                                    <div style="margin-bottom: 8px;">950€ total</div>
-                                    <div style="font-size: 0.85em; opacity: 0.8;">158€/mois sur 6 mois</div>
+                                    <div style="margin-bottom: 8px;">1270€ total</div>
+                                    <div style="font-size: 0.85em; opacity: 0.8;">212€/mois sur 6 mois</div>
                                 </div>
                                 <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
                                     <div style="font-weight: 600; margin-bottom: 5px;">📦 3 vidéos</div>
-                                    <div style="margin-bottom: 8px;">475€ total</div>
-                                    <div style="font-size: 0.85em; opacity: 0.8;">158€/mois sur 3 mois</div>
+                                    <div style="margin-bottom: 8px;">635€ total</div>
+                                    <div style="font-size: 0.85em; opacity: 0.8;">212€/mois sur 3 mois</div>
                                 </div>
                             </div>
                             <div style="background: white; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px;">
                                 <div style="font-weight: 600; margin-bottom: 5px; color: #27ae60;">🎯 Formule annuelle</div>
-                                <div style="margin-bottom: 5px; font-size: 1.1em;">1800€/an (12 vidéos)</div>
-                                <div style="font-size: 0.85em; opacity: 0.8;">150€/mois | Économie de 300€</div>
+                                <div style="margin-bottom: 5px; font-size: 1.1em;">2400€/an (12 vidéos)</div>
+                                <div style="font-size: 0.85em; opacity: 0.8;">200€/mois | Économie de 640€</div>
                             </div>
                         </div>
                         <div style="background: #d5edda; padding: 15px; border-radius: 10px; color: #155724; text-align: center; font-size: 0.9em; font-weight: 600;">
@@ -564,7 +592,7 @@
                         </ul>
                         <div style="background: #9b59b6; color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
                             <div style="font-weight: 600; margin-bottom: 5px;">🕐 Délai : 5-7 jours après tournage</div>
-                            <div style="font-size: 1.6em; font-weight: 700; margin-bottom: 5px;">💰 À partir de 433€/mois</div>
+                            <div style="font-size: 1.6em; font-weight: 700; margin-bottom: 5px;">💰 À partir de 432€/mois</div>
                             <div style="font-size: 1em; opacity: 0.9;">🎨 Création sur-mesure incluse</div>
                         </div>
                         
@@ -574,19 +602,19 @@
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; color: #6a1b9a; font-size: 0.9em;">
                                 <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
                                     <div style="font-weight: 600; margin-bottom: 5px;">📦 6 vidéos</div>
-                                    <div style="margin-bottom: 8px;">2600€ total</div>
-                                    <div style="font-size: 0.85em; opacity: 0.8;">433€/mois sur 6 mois</div>
+                                    <div style="margin-bottom: 8px;">2590€ total</div>
+                                    <div style="font-size: 0.85em; opacity: 0.8;">432€/mois sur 6 mois</div>
                                 </div>
                                 <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
                                     <div style="font-weight: 600; margin-bottom: 5px;">📦 3 vidéos</div>
-                                    <div style="margin-bottom: 8px;">1300€ total</div>
-                                    <div style="font-size: 0.85em; opacity: 0.8;">433€/mois sur 3 mois</div>
+                                    <div style="margin-bottom: 8px;">1295€ total</div>
+                                    <div style="font-size: 0.85em; opacity: 0.8;">432€/mois sur 3 mois</div>
                                 </div>
                             </div>
                             <div style="background: white; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px;">
                                 <div style="font-weight: 600; margin-bottom: 5px; color: #9b59b6;">🏆 Formule annuelle premium</div>
                                 <div style="margin-bottom: 5px; font-size: 1.1em;">4800€/an (12 vidéos)</div>
-                                <div style="font-size: 0.85em; opacity: 0.8;">400€/mois | Économie de 800€</div>
+                                <div style="font-size: 0.85em; opacity: 0.8;">400€/mois | Économie de 1360€</div>
                             </div>
                         </div>
                         <div style="background: #f3e5f5; padding: 15px; border-radius: 10px; color: #6a1b9a; text-align: center; font-size: 0.9em; font-weight: 600;">
